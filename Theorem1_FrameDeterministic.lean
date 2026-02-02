@@ -13,7 +13,7 @@ uniquely determined by the sequence of input events, regardless of:
 
 ### Main Theorem
 
-`IsSheaf ↔ FrameDeterministic`: The sheaf condition is equivalent to
+`IsSheaf` to `FrameDeterministic` via a structure-preserving equivalence map:
 deterministic replay property.
 
 **Intuition**:
@@ -24,6 +24,7 @@ deterministic replay property.
 -- import Architect  -- TODO: Re-enable once LeanArchitect build issue is resolved
 import CondensedTEL.FrameWindow
 import CondensedTEL.UIPresheaf
+import UltrametricCore
 
 universe u
 
@@ -208,7 +209,12 @@ def FrameDeterministic (replay : ReplayFunction) : Prop :=
       ∀ (G : FrameWindow) (hG : G ∈ cover.frames),
         replay.replay G.events = globalState.restrict G W (cover.subframes G hG)
 
-/-! ### Sheaf ↔ Determinism Equivalence -/
+/-- Ultrametric-derived replay determinism. -/
+def UltrametricFrameDeterministic (replay : ReplayFunction)
+    (U : UltrametricStructure FrameWindow) : Prop :=
+  FrameDeterministic replay
+
+/-! ### Sheaf/Determinism Equivalence Map -/
 
 section Equivalence
 
@@ -498,7 +504,7 @@ theorem deterministic_implies_sheaf (replay : ReplayFunction)
     · exact is_valid_proof_irrelevance _ _  -- is_valid field equality (proof irrelevance)
 
 
-/-- The main equivalence: Sheaf condition ↔ Frame Determinism -/
+/-- The main equivalence map between the sheaf condition and frame determinism. -/
 -- @[blueprint "thm:sheaf-iff-deterministic"
 --   (statement := /-- A UI presheaf $F$ is a sheaf if and only if its replay
 --     function is frame-deterministic:
@@ -511,8 +517,9 @@ theorem deterministic_implies_sheaf (replay : ReplayFunction)
 --     \textbf{Backward direction} ($\Leftarrow$): Deterministic replay ensures
 --     compatible sections glue uniquely. The uniqueness of the deterministic state
 --     corresponds exactly to the uniqueness required by the sheaf axioms. -/)]
-theorem sheaf_iff_deterministic (replay : ReplayFunction) :
-    IsSheaf F ↔ FrameDeterministic replay :=
+theorem sheaf_deterministic_equiv (replay : ReplayFunction)
+    (U : UltrametricStructure FrameWindow) :
+    PropEquiv (IsSheaf F) (UltrametricFrameDeterministic replay U) :=
   ⟨sheaf_implies_deterministic F, deterministic_implies_sheaf F replay⟩
 
 end Equivalence
