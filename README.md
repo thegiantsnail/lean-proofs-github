@@ -21,40 +21,43 @@ Formalizes the universal pattern with three semantic axioms:
 **Main Theorem** (lines 196-274):
 ```lean
 theorem universal_equivalence (a : A.Obj) (c : C.Obj) :
-    C.satisfies c ↔ ∃! a' : A.Obj, Corresponds a' c
+    PropEquiv (C.satisfies c) (∃! a' : A.Obj, Corresponds a' c)
 ```
 
-### Theorem 1: Condensed TEL (Sheaf ↔ Frame Determinism)
+### Theorem 1: Condensed TEL (Sheaf/Frame Determinism)
 **File**: `Theorem1_FrameDeterministic.lean` (397 lines)
 
 Proves that sheaf structure on frame windows is equivalent to frame-deterministic replay in UI semantics.
 
 **Main Theorem** (line 365):
 ```lean
-theorem sheaf_iff_deterministic (F : ReplayFunction) :
-    IsSheaf F ↔ FrameDeterministic F
+theorem sheaf_deterministic_equiv (F : UIPresheaf) (replay : ReplayFunction)
+    (U : UltrametricStructure FrameWindow) :
+    PropEquiv (IsSheaf F) (UltrametricFrameDeterministic replay U)
 ```
 
 **Domain**: Frame windows with temporal hierarchy  
 **Ultrametric**: Temporal nesting depth  
 **Time**: ~3 weeks (discovery phase)
 
-### Theorem 2: Quantum Control (Thin-Tree ↔ Locality)
+### Theorem 2: Quantum Control (Thin-Tree/Locality)
 **File**: `Theorem2_ThinTreeDeterminism.lean` (386 lines)
 
 Proves that thin-tree reachability structure is equivalent to locality constraints in quantum control.
 
 **Main Theorem** (line 352):
 ```lean
-theorem thin_tree_iff_locality (n : ℕ) (K : ℕ) :
-    ThinTreeStructure n K ↔ LocalityConstrained n K
+theorem thin_tree_locality_equiv (n : ℕ) (K : ℕ)
+    (U : UltrametricStructure (PauliString n)) :
+    PropEquiv (UltrametricThinTreeStructure n K U)
+      (UltrametricLocalityConstrained n K U)
 ```
 
 **Domain**: Pauli operators with weight hierarchy  
 **Ultrametric**: Operator weight (Hamming distance)  
 **Time**: ~2 hours (13× speedup via template)
 
-### Theorem 3: Langlands (Gauge ↔ Floer)
+### Theorem 3: Langlands (Gauge/Floer)
 **File**: `Theorem3_LanglandsTheorem.lean` (297 lines)
 
 Proves that gauge equivalence of certificate chains is equivalent to Floer homology isomorphism.
@@ -62,22 +65,23 @@ Proves that gauge equivalence of certificate chains is equivalent to Floer homol
 **Main Theorem** (line 265):
 ```lean
 theorem langlands_equivalence (C₀ C₁ : CertificateChain) :
-    GaugeEquivalent C₀ C₁ ↔ FloerIsomorphic C₀ C₁
+    PropEquiv (GaugeEquivalent C₀ C₁) (FloerIsomorphic C₀ C₁)
 ```
 
 **Domain**: Certificate chains with profinite hierarchy  
 **Ultrametric**: Profinite probe refinement  
 **Time**: ~1 hour (26× speedup)
 
-### Theorem 4: Program Semantics (Homology ↔ p-adic)
+### Theorem 4: Program Semantics (Homology/p-adic)
 **File**: `Theorem4_ProgramSemantics.lean` (202 lines)
 
 Proves that homological equivalence (cycle count) is equivalent to p-adic equivalence (prime valuations).
 
 **Main Theorem** (line 178):
 ```lean
-theorem program_equivalence (P Q : Program) :
-    HomologicalEquiv P Q ↔ PAdicEquiv P Q
+theorem program_equivalence (U : UltrametricStructure Program) (P Q : Program) :
+    PropEquiv (UltrametricHomologicalEquiv P Q U)
+      (UltrametricPAdicEquiv P Q U)
 ```
 
 **Domain**: Binary tree programs with p-adic distance  
