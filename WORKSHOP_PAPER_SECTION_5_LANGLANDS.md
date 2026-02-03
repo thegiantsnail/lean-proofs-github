@@ -7,9 +7,11 @@
 
 ---
 
-## 5. Instance 3: Langlands Correspondence via Certificate Chains
+## 5. Instance 3: Abstract Duality Pattern (Langlands-Inspired)
 
-We present the third instance: the equivalence between gauge equivalence of certificate chains and Floer homology isomorphism. This instance achieved the highest productivity gain—**26× speedup** (~1 hour vs. baseline), while moving to a completely different mathematical domain (arithmetic geometry). The formalization demonstrates that the pattern applies even to abstract correspondence results from number theory.
+⚠️ **Formalization Status**: This instance is a **symbolic template only**—it demonstrates the universal pattern structure using Langlands-inspired terminology but does not implement actual Floer homology or gauge theory. See §5.8 for honest assessment.
+
+We present the third instance: the equivalence between symbolic gauge equivalence and symbolic Floer homology. This instance achieved the highest productivity gain—**26× speedup** (~1 hour vs. baseline), while moving to a completely different mathematical domain (arithmetic geometry). The formalization demonstrates that the **pattern template** applies even to abstract correspondence results inspired by number theory.
 
 ### 5.1 Domain: Certificate Chains with Profinite Hierarchy
 
@@ -178,14 +180,43 @@ The equivalence theorem provides a **computational interpretation** of Langlands
 
 ### 5.7 Discussion
 
-The Langlands instance demonstrates:
+The Langlands-inspired instance demonstrates:
 
-1. **Arithmetic applicability**: Pattern applies to number theory and arithmetic geometry, not just computational domains
+1. **Template applicability**: Pattern applies to arithmetic-inspired structures (though symbolic here)
 2. **Maximum productivity**: 26× speedup shows template mastery (diminishing learning curve)
 3. **Exact complexity prediction**: 297 lines vs. predicted ~300 (99% accuracy)
-4. **Local-to-global principle**: Ultrametric (profinite) structure naturally encodes "local-to-global" correspondence
+4. **Local-to-global principle**: Ultrametric (profinite) structure encodes "local-to-global" pattern
 
-The success on such an abstract domain (certificate chains with Floer homology) following two concrete domains (UI replay, quantum operators) provided compelling evidence that the pattern transcends domain-specific features—it's a structural universal tied to ultrametric hierarchy.
+⚠️ **Critical Limitation**: This instance is **symbolic only**—see honest assessment in §5.8.
+
+### 5.8 Honest Assessment: Symbolic vs. Real Mathematics
+
+**What is formalized**:
+- ✅ Pattern template with 3-axiom structure (functoriality, completeness, computational content)
+- ✅ Bidirectional proof architecture (gauge-like → homology-like, reverse direction)
+- ✅ Type-checked code (0 errors, 297 lines)
+
+**What is NOT formalized**:
+- ❌ Actual Floer homology (no chain complexes, no symplectic geometry, no pseudo-holomorphic curves)
+- ❌ Actual gauge theory (no Lie groups, no principal bundles, no connections)
+- ❌ Langlands correspondence (no Galois representations, no automorphic forms)
+
+**Why this matters**:
+- The formalization demonstrates **pattern structure** but not **mathematical content**
+- Names like "FloerHomology" and "GaugeEquivalent" are **placeholders**
+- The instance validates **template productivity** (1 hour, 297 lines) but not mathematical depth
+
+**Resolution paths** (see TODO.md § T3):
+- **Path A** (RECOMMENDED for workshop): Accept as symbolic template, add disclaimers ✅ DONE
+- **Path B** (for journal): Implement real mathematics (30-40 hours)
+  - Import mathlib chain complexes and Lie theory
+  - Define toy gauge group (e.g., finite abelian group)
+  - Prove for simple case (e.g., rank-1 bundles over torus)
+
+**Publication guidance**:
+- Workshop paper: Include with explicit disclaimer (current approach) ✅
+- Conference paper: Either implement Path B or remove entirely
+- Journal paper: Must have real mathematics or honest removal
 
 ---
 
