@@ -9,11 +9,27 @@
 
 ## 6. Instance 4: Program Semantics—Homology ↔ p-adic Valuations
 
-We present the fourth instance: the equivalence between homological equivalence and p-adic equivalence for programs represented as binary trees. This instance is the **first with real mathematics** (chain complex formalization) and demonstrates a surprising connection—programs with the same cycle structure (homology) have equal p-adic valuations at all primes, establishing "**Local Langlands for Programs**".
+We present the fourth instance: the equivalence between homological equivalence and p-adic equivalence for programs represented as binary trees. This instance is the **first with real mathematics** (chain complex formalization) and demonstrates a surprising connection—programs with the same cycle structure (homology) have equal p-adic valuations at all primes, establishing **Global–Local Program Equivalence (Langlands Pattern)**. Here, “Langlands Pattern” denotes the global–local duality in program semantics rather than any classical number-theoretic claim.
 
 **Phase 1 Achievement**: Unlike previous instances which rely on axioms, this instance includes a **real chain complex structure** with boundary operators ∂ₙ: Cₙ₊₁ → Cₙ satisfying ∂∂ = 0. The H₁ homology is computed directly as ker(∂₁) / im(∂₂), not axiomatized.
 
-### 6.1 Domain: Programs as Binary Trees with p-adic Distance
+### 6.1 Global–Local Program Equivalence (Langlands Pattern)
+
+We view compilation and execution as a global–local pipeline, with semantics captured globally and traces captured locally:
+
+```
+Source Program
+      ↓ compile
+Bytecode / VM IR
+      ↓ execution
+Local Traces / Certificates
+
+Global Semantics  ≃  Compatible Local Traces
+```
+
+**Definition (Compilation Symmetry Group):** The groupoid of semantics-preserving transformations (optimization passes, refactorings, lowering steps).
+
+### 6.2 Domain: Programs as Binary Trees with p-adic Distance
 
 **Setting**: Consider programs as **binary trees** where:
 - **Leaf nodes**: Base cases (return statements)
@@ -48,7 +64,16 @@ def pAdicValuation (P : Program) (p : Prime) : ℤ :=
 
 This ultrametric captures the idea that program equivalence can be tested "locally" at each prime, mirroring the profinite structure in Langlands (§5).
 
-### 6.2 Abstract Perspective: Homological Equivalence (Real Mathematics)
+**Ultrametricity ensures**:
+* earliest divergence dominates
+* local agreement implies global agreement
+* deterministic reconstruction
+
+*Without ultrametric structure, the equivalence may fail.*
+
+**Counterexample:** A nondeterministic concurrent program with timing-dependent behavior does not admit a global–local equivalence under this framework.
+
+### 6.3 Abstract Perspective: Homological Equivalence (Real Mathematics)
 
 **Chain Complex Construction**: We build a genuine algebraic topology structure:
 
@@ -101,7 +126,7 @@ def HomologicalEquiv (P Q : Program) : Prop :=
 
 **Intuition**: Homological equivalence is the **abstract** perspective—it's topological, global, computed from chain complex structure.
 
-### 6.3 Concrete Perspective: p-adic Equivalence
+### 6.4 Concrete Perspective: p-adic Equivalence
 
 **Construction**: Two programs are **p-adically equivalent** if they have equal p-adic valuations at **all** primes:
 
@@ -126,7 +151,7 @@ instance : Decidable (∀ p ≤ bound,
 
 **Intuition**: p-adic equivalence is the **concrete** perspective—it's arithmetic, local (tested prime-by-prime), and computationally verifiable.
 
-### 6.4 Main Theorem: Homology ↔ p-adic
+### 6.5 Main Theorem: Homology ↔ p-adic
 
 **Theorem** (Homological equivalence iff p-adic equivalence):
 
@@ -175,7 +200,38 @@ We can compute p-adic valuations up to any finite bound and check equality, prov
 - **Build status**: 0 type errors. Main theorem type-checks successfully with three semantic axioms axiomatized following pattern (§2.5).
 - **Time**: ~30 minutes template application
 
-### 6.5 Template Application—Fourth Instance Validation
+### 6.6 Demonstrative Multi-VM Equivalence Example (Anchor)
+
+**Goal (not a proof):** Provide a concrete anchor showing how the equivalence manifests across different virtual machines.
+
+**Demo program:** Monotone counter with an event log hash.
+
+```
+Input: [event₁, event₂, event₃]
+
+Invariant:
+  final_state
+  + trace_hash
+```
+
+Each VM produces:
+* a final value
+* a trace summary
+
+Equivalence is defined as:
+```
+(final_state, trace_hash) is equal
+```
+
+**VM coverage (minimal but convincing):**
+| VM  | Reason |
+| --- | --- |
+| JVM | Mainstream, deterministic |
+| BEAM | Actor model, message passing |
+
+**Claim phrasing:** *These implementations are not operationally identical, but they instantiate the same global semantic invariant under compatible local traces.*
+
+### 6.7 Template Application—Fourth Instance Validation
 
 **Discovery process**: The fourth instance achieved **maximum efficiency**:
 
@@ -196,15 +252,15 @@ We can compute p-adic valuations up to any finite bound and check equality, prov
 
 The fourth instance validated that pattern predictions remain accurate even as instances become more efficient—line counts follow predicted distributions (200-250 for 2-perspective vs. 350-450 for 3-perspective).
 
-### 6.6 "Local Langlands for Programs"
+### 6.8 Global–Local Program Equivalence (Langlands Pattern)
 
 **Key insight**: The theorem establishes a **local-to-global principle for program semantics**:
 
 > Programs with equal **local factors** (p-adic valuations at each prime) have isomorphic **global structure** (homology).
 
-This mirrors the local Langlands correspondence (§5):
+This mirrors the global–local duality pattern associated with the Langlands program (§5), without asserting any classical arithmetic results:
 - **Local data**: p-adic valuations at each prime ↔ Galois representations at each prime
-- **Global structure**: Homology rank ↔ Automorphic representation
+- **Global structure**: Homology rank ↔ Program semantic invariant (automorphic-like)
 - **Reconstruction**: p-adic gluing ↔ Profinite étale descent
 
 The analogy runs deep:
@@ -217,7 +273,7 @@ This connection suggests that Langlands-type correspondences are not unique to n
 2. Local-to-global gluing (reconstruction)
 3. Abstract (homological) ↔ Concrete (arithmetic) duality
 
-### 6.7 Discussion
+### 6.9 Discussion
 
 The program semantics instance demonstrates:
 
@@ -228,7 +284,7 @@ The program semantics instance demonstrates:
 
 The success in formalizing **actual chain complex homology** (not just axiomatizing it) demonstrates that the universal pattern is not merely a template for declarations—it guides discovery of genuine mathematical structure. The chain complex was constructed by following the pattern's ultrametric hierarchy (tree depth levels), and the resulting ∂∂=0 property emerged naturally.
 
-This instance also achieves the **"Local Langlands for Programs"** vision:
+This instance also achieves the **Global–Local Program Equivalence (Langlands Pattern)** vision:
 - p-adic valuations = local factors at each prime
 - H₁ homology = global cycle structure
 - Reconstruction theorem = local data determines global
@@ -244,8 +300,8 @@ The formal connection suggests applying this approach to:
 
 **Length**: ~750 words (1.5 pages in 2-column)  
 **Code blocks**: 6 (Lean definitions and theorems)  
-**Key Achievement**: Shortest formalization (202 lines), "Local Langlands for Programs" insight  
-**Subsections**: 7 (6.1-6.7)
+**Key Achievement**: Shortest formalization (202 lines), Global–Local Program Equivalence (Langlands Pattern) insight  
+**Subsections**: 9 (6.1-6.9)
 
 ---
 

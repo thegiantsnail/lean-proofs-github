@@ -136,7 +136,7 @@ To address the limitations, we propose **six high-priority candidate instances**
 - Certificate chain gauge equivalence (§5) mirrors program p-adic valuations (§6)
 - All four satisfy the same three-axiom pattern with ultrametric foundation
 
-These connections suggest **unexplored mathematical relationships**—e.g., "Local Langlands for Programs" (§6.6) hints that Langlands-type correspondences may be ubiquitous in hierarchical settings.
+These connections suggest **unexplored mathematical relationships**—e.g., Global–Local Program Equivalence (Langlands Pattern) (§6.8) hints that Langlands-type correspondences may be ubiquitous in hierarchical settings.
 
 **Proof assistant design**: The pattern informs **future proof assistant features**:
 - **Pattern libraries**: Collections of meta-theorems with instantiation templates
