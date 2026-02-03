@@ -41,7 +41,7 @@
    - 0 sorry statements
 
 7. **Theorem3_LanglandsTheorem.lean** (11,911 bytes, 280 lines)
-   - Instance 3: Langlands-style certificates
+   - Instance 3: Global–Local Program Equivalence (Langlands Pattern) certificates
    - Gauge ↔ Floer equivalence
    - 0 sorry statements
 
