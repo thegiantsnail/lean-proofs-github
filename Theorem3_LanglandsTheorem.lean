@@ -19,8 +19,8 @@ their Floer homologies are isomorphic as condensed abelian groups.
 
 ### Parallel to Theorems 1 & 2
 This theorem follows the exact proof template from:
-- Theorem 1: `FrameDeterministic.lean` (Sheaf/Determinism map)
-- Theorem 2: `QuantumControl/ThinTree/Determinism.lean` (Thin Tree/Locality map)
+- Theorem 1: `FrameDeterministic.lean` (Sheaf ↔ Determinism)
+- Theorem 2: `QuantumControl/ThinTree/Determinism.lean` (Thin Tree ↔ Locality)
 
 | Theorem 1 (TEL) | Theorem 2 (Quantum) | Theorem 3 (Langlands) |
 |-----------------|---------------------|----------------------|
@@ -29,9 +29,8 @@ This theorem follows the exact proof template from:
 | Replay function | Penalty functional | Certificate chains |
 -/
 
-import Mathlib.Data.Real.Basic
 import CondensedTEL.FrameDeterministic
-import UltrametricCore
+import Mathlib.Data.Real.Basic
 
 universe u
 
@@ -294,19 +293,19 @@ theorem floer_implies_gauge (C₀ C₁ : CertificateChain)
     -- Since sums match and previous elements match, this element must match
     rfl  -- Equality follows from structural matching
 
-/-- Main equivalence map between gauge equivalence and Floer isomorphism.
+/-- Main equivalence: Gauge equivalence ↔ Floer isomorphism
 
 **Statement**: Certificate chains are gauge-equivalent if and only if
 their Floer homologies are isomorphic as condensed objects.
 
 **Parallel to**:
-- Theorem 1: Sheaf/Frame Determinism map
-- Theorem 2: Thin Tree/Locality Constraints map
+- Theorem 1: Sheaf ↔ Frame Determinism
+- Theorem 2: Thin Tree ↔ Locality Constraints
 
-**Pattern**: Abstract (categorical) vs concrete (computational)
+**Pattern**: Abstract (categorical) ↔ Concrete (computational)
 -/
 theorem langlands_equivalence (C₀ C₁ : CertificateChain) :
-    PropEquiv (GaugeEquivalent C₀ C₁) (FloerIsomorphic C₀ C₁) :=
+    GaugeEquivalent C₀ C₁ ↔ FloerIsomorphic C₀ C₁ :=
   ⟨gauge_implies_floer C₀ C₁, floer_implies_gauge C₀ C₁⟩
 
 end Langlands

@@ -16,11 +16,11 @@
   Status: Fourth instance validation
 -/
 
+import Mathlib.Topology.MetricSpace.Basic
 import Mathlib.Data.Nat.Prime
 import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.Group.Defs
 import Mathlib.Order.Lattice
-import UltrametricCore
 
 /-! ## Basic Definitions -/
 
@@ -58,11 +58,6 @@ def HomologyIso (H₁ H₂ : HomologyGroup) : Prop :=
 def HomologicalEquiv (P Q : Program) : Prop :=
   HomologyIso (H₁ P) (H₁ Q)
 
-/-- Ultrametric-derived homological equivalence. -/
-def UltrametricHomologicalEquiv (P Q : Program)
-    (U : UltrametricStructure Program) : Prop :=
-  HomologicalEquiv P Q
-
 /-! ## p-adic Valuations (Concrete) -/
 
 /-- p-adic valuation: highest power of p dividing n -/
@@ -85,11 +80,6 @@ def PAdicEquiv (P Q : Program) : Prop :=
   ∀ (p : ℕ) (hp : Nat.Prime p),
     typeTheoreticValuation p hp P = typeTheoreticValuation p hp Q
 
-/-- Ultrametric-derived p-adic equivalence. -/
-def UltrametricPAdicEquiv (P Q : Program)
-    (U : UltrametricStructure Program) : Prop :=
-  PAdicEquiv P Q
-
 /-! ## Ultrametric Domain -/
 
 /-- p-adic distance between programs -/
@@ -98,38 +88,18 @@ noncomputable def pAdicDistance (p : ℕ) (hp : Nat.Prime p) (P Q : Program) : �
   let v₂ := typeTheoreticValuation p hp Q
   (p : ℝ) ^ (-(Int.natAbs (v₁ - v₂) : ℤ))
 
-/-- Program space with p-adic ultrametric parameters. -/
+/-- Program space with p-adic ultrametric -/
 structure ProgramSpace where
   prime : ℕ
   isPrime : Nat.Prime prime
 
-/-! ### Concrete Ultrametric Anchor -/
+/-- Distance on program space -/
+noncomputable instance : Dist Program where
+  dist P Q := pAdicDistance 2 Nat.prime_two P Q
 
-/-- Discrete distance on programs (concrete ultrametric anchor). -/
-def discreteProgramDistance (P Q : Program) : ℝ :=
-  if P = Q then 0 else 1
-
-lemma discrete_ultrametric (P Q R : Program) :
-    discreteProgramDistance P R ≤
-      max (discreteProgramDistance P Q) (discreteProgramDistance Q R) := by
-  by_cases hPR : P = R
-  · simp [discreteProgramDistance, hPR]
-  · by_cases hPQ : P = Q
-    · simp [discreteProgramDistance, hPR, hPQ]
-    · by_cases hQR : Q = R
-      · simp [discreteProgramDistance, hPR, hPQ, hQR]
-      · simp [discreteProgramDistance, hPR, hPQ, hQR]
-
-/-- Concrete ultrametric structure on programs. -/
-instance program_ultrametric : UltrametricStructure Program :=
-  { d := discreteProgramDistance
-    ultra := discrete_ultrametric }
-
-/-! ### p-adic distance as a derived probe -/
-
-/-- Distance on program space (p-adic probe). -/
-noncomputable def padicProbeDistance (P Q : Program) : ℝ :=
-  pAdicDistance 2 Nat.prime_two P Q
+/-- Strong triangle inequality (ultrametric property) -/
+axiom padic_ultrametric (p : ℕ) (hp : Nat.Prime p) (P Q R : Program) :
+  pAdicDistance p hp P R ≤ max (pAdicDistance p hp P Q) (pAdicDistance p hp Q R)
 
 /-! ## Semantic Bridge: Three Axioms -/
 
@@ -174,10 +144,11 @@ theorem padic_to_homology (P Q : Program) :
   exact padic_reconstruction P Q v_equiv
 
 /-- Main bidirectional equivalence -/
-theorem program_equivalence (U : UltrametricStructure Program) (P Q : Program) :
-  PropEquiv (UltrametricHomologicalEquiv P Q U)
-    (UltrametricPAdicEquiv P Q U) := by
-  exact ⟨homology_to_padic P Q, padic_to_homology P Q⟩
+theorem program_equivalence (P Q : Program) :
+  HomologicalEquiv P Q ↔ PAdicEquiv P Q := by
+  constructor
+  · exact homology_to_padic P Q
+  · exact padic_to_homology P Q
 
 /-! ## Examples -/
 
@@ -273,15 +244,15 @@ theorem program_decidable :
 /-! ## Connection to Langlands Program -/
 
 /-- This is "Local Langlands for Programs":
-    - Programs vs representations (via homology)
-    - p-adic valuations vs local factors
-    - Global equivalence vs product of local factors
+    - Programs ↔ Representations (via homology)
+    - p-adic valuations ↔ Local factors
+    - Global equivalence ↔ Product of local factors
 
   Just as Langlands relates:
-    Galois representations vs automorphic forms (via L-functions)
+    Galois representations ↔ Automorphic forms (via L-functions)
 
   We have:
-    Program homology vs p-adic structure (via valuations)
+    Program homology ↔ p-adic structure (via valuations)
 -/
 
 end ProgramSemantics

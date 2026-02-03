@@ -2,11 +2,11 @@
 Copyright (c) 2026 Quantum Control Project. All rights reserved.
 Released under Apache 2.0 license.
 
-## Thin Tree / Locality Constraint Equivalence
+## Thin Tree ↔ Locality Constraint Equivalence
 
 This file establishes the fundamental equivalence between thin-tree structure
 and locality constraints in quantum control, directly paralleling the
-Sheaf/frame determinism theorem in Condensed TEL.
+Sheaf ↔ Frame Determinism theorem in Condensed TEL.
 
 **Main Result**: A Pauli string system has thin-tree structure if and only if
 it satisfies locality constraints via penalty functionals.
@@ -33,7 +33,6 @@ This theorem follows the exact proof template from:
 import QuantumControl.Pauli.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Lie.Basic
-import UltrametricCore
 
 universe u
 
@@ -213,11 +212,6 @@ def ThinTreeStructure (n K : ℕ) : Prop :=
       ∀ w (hw : w ≤ K),
         global.restrictTo hw = levels w hw
 
-/-- Ultrametric-derived thin-tree structure. -/
-def UltrametricThinTreeStructure (n K : ℕ)
-    (U : UltrametricStructure (PauliString n)) : Prop :=
-  ThinTreeStructure n K
-
 /-! ### Locality Constraint -/
 
 /-- A quantum system satisfies locality constraints if:
@@ -237,11 +231,6 @@ def LocalityConstrained (n K : ℕ) : Prop :=
       -- It satisfies bounds at each weight level
       (0 ≤ penalty) ∧
       ∀ w ≤ K, penalty ≤ (w : ℝ) * penalty  -- Simplified bound condition
-
-/-- Ultrametric-derived locality constraint. -/
-def UltrametricLocalityConstrained (n K : ℕ)
-    (U : UltrametricStructure (PauliString n)) : Prop :=
-  LocalityConstrained n K
 
 /-! ### Main Equivalence Theorem -/
 
@@ -408,12 +397,12 @@ theorem locality_implies_thin_tree (hLoc : LocalityConstrained n K) :
     -- the same Lie algebra and thus are equal as elements of the controlled system
     exact reachable_states_generate_lie_algebra
 
-/-- The main equivalence map between thin-tree structure and locality constraints.
+/-- The main equivalence: Thin-tree structure ↔ Locality constraints
 
 **Statement**: A quantum system has thin-tree structure if and only if
 it satisfies locality constraints:
 
-    ThinTreeStructure(n, K) ~ LocalityConstrained(n, K)
+    ThinTreeStructure(n, K) ↔ LocalityConstrained(n, K)
 
 **Significance**: This connects:
 - Abstract: Lie algebra closure (bracket hierarchy)
@@ -424,9 +413,8 @@ locality-constrained quantum systems correspond to thin-tree structures.
 
 **File**: `QuantumControl/ThinTree/Determinism.lean`
 -/
-theorem thin_tree_locality_equiv (U : UltrametricStructure (PauliString n)) :
-    PropEquiv (UltrametricThinTreeStructure n K U)
-      (UltrametricLocalityConstrained n K U) :=
+theorem thin_tree_iff_locality :
+    ThinTreeStructure n K ↔ LocalityConstrained n K :=
   ⟨thin_tree_implies_locality, locality_implies_thin_tree⟩
 
 end Equivalence

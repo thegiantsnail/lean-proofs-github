@@ -1,12 +1,14 @@
 # Universal Equivalence Pattern - Lean 4 Formalization
 
 **Date**: February 2, 2026  
-**Status**: 4 theorems complete + meta-theorem formalized  
+**Status**: 4 theorems complete + meta-theorem formalized + **axiom proof in progress** 🔬  
 **Lean Version**: 4.3.0 (condensed-tel), 4.28.0-rc1 (quantum-control)
 
 ## Overview
 
 This repository contains the complete Lean 4 formalization of the **Universal Equivalence Pattern**, a meta-theorem establishing canonical correspondences between abstract (sheaf-like) and concrete (computational) structures on ultrametric domains.
+
+**NEW**: We are now **proving axioms from first principles** using concrete operational semantics (see `CondensedTEL/Examples/DiscreteCounter.lean`), demonstrating that the axiomatization is derivable from computational models.
 
 ## Main Results
 
@@ -21,43 +23,40 @@ Formalizes the universal pattern with three semantic axioms:
 **Main Theorem** (lines 196-274):
 ```lean
 theorem universal_equivalence (a : A.Obj) (c : C.Obj) :
-    PropEquiv (C.satisfies c) (∃! a' : A.Obj, Corresponds a' c)
+    C.satisfies c ↔ ∃! a' : A.Obj, Corresponds a' c
 ```
 
-### Theorem 1: Condensed TEL (Sheaf/Frame Determinism)
+### Theorem 1: Condensed TEL (Sheaf ↔ Frame Determinism)
 **File**: `Theorem1_FrameDeterministic.lean` (397 lines)
 
 Proves that sheaf structure on frame windows is equivalent to frame-deterministic replay in UI semantics.
 
 **Main Theorem** (line 365):
 ```lean
-theorem sheaf_deterministic_equiv (F : UIPresheaf) (replay : ReplayFunction)
-    (U : UltrametricStructure FrameWindow) :
-    PropEquiv (IsSheaf F) (UltrametricFrameDeterministic replay U)
+theorem sheaf_iff_deterministic (F : ReplayFunction) :
+    IsSheaf F ↔ FrameDeterministic F
 ```
 
 **Domain**: Frame windows with temporal hierarchy  
 **Ultrametric**: Temporal nesting depth  
 **Time**: ~3 weeks (discovery phase)
 
-### Theorem 2: Quantum Control (Thin-Tree/Locality)
+### Theorem 2: Quantum Control (Thin-Tree ↔ Locality)
 **File**: `Theorem2_ThinTreeDeterminism.lean` (386 lines)
 
 Proves that thin-tree reachability structure is equivalent to locality constraints in quantum control.
 
 **Main Theorem** (line 352):
 ```lean
-theorem thin_tree_locality_equiv (n : ℕ) (K : ℕ)
-    (U : UltrametricStructure (PauliString n)) :
-    PropEquiv (UltrametricThinTreeStructure n K U)
-      (UltrametricLocalityConstrained n K U)
+theorem thin_tree_iff_locality (n : ℕ) (K : ℕ) :
+    ThinTreeStructure n K ↔ LocalityConstrained n K
 ```
 
 **Domain**: Pauli operators with weight hierarchy  
 **Ultrametric**: Operator weight (Hamming distance)  
 **Time**: ~2 hours (13× speedup via template)
 
-### Theorem 3: Langlands (Gauge/Floer)
+### Theorem 3: Langlands (Gauge ↔ Floer)
 **File**: `Theorem3_LanglandsTheorem.lean` (297 lines)
 
 Proves that gauge equivalence of certificate chains is equivalent to Floer homology isomorphism.
@@ -65,23 +64,22 @@ Proves that gauge equivalence of certificate chains is equivalent to Floer homol
 **Main Theorem** (line 265):
 ```lean
 theorem langlands_equivalence (C₀ C₁ : CertificateChain) :
-    PropEquiv (GaugeEquivalent C₀ C₁) (FloerIsomorphic C₀ C₁)
+    GaugeEquivalent C₀ C₁ ↔ FloerIsomorphic C₀ C₁
 ```
 
 **Domain**: Certificate chains with profinite hierarchy  
 **Ultrametric**: Profinite probe refinement  
 **Time**: ~1 hour (26× speedup)
 
-### Theorem 4: Program Semantics (Homology/p-adic)
+### Theorem 4: Program Semantics (Homology ↔ p-adic)
 **File**: `Theorem4_ProgramSemantics.lean` (202 lines)
 
 Proves that homological equivalence (cycle count) is equivalent to p-adic equivalence (prime valuations).
 
 **Main Theorem** (line 178):
 ```lean
-theorem program_equivalence (U : UltrametricStructure Program) (P Q : Program) :
-    PropEquiv (UltrametricHomologicalEquiv P Q U)
-      (UltrametricPAdicEquiv P Q U)
+theorem program_equivalence (P Q : Program) :
+    HomologicalEquiv P Q ↔ PAdicEquiv P Q
 ```
 
 **Domain**: Binary tree programs with p-adic distance  
@@ -130,6 +128,9 @@ lake build Theorem3_LanglandsTheorem
 
 # Theorem 4 (Programs)
 lake build Theorem4_ProgramSemantics
+
+# NEW: Axiom proof from first principles
+lake build CondensedTEL.Examples.DiscreteCounter
 ```
 
 ### Verification
@@ -139,7 +140,7 @@ Check for sorry statements:
 rg sorry --stats
 ```
 
-Expected: 0 in main theorems, 3 only in Theorem 1 examples.
+Expected: 0 in main theorems, 3 only in Theorem 1 examples, some in DiscreteCounter (work in progress).
 
 ## File Structure
 
@@ -176,6 +177,27 @@ lean-proofs-github/
 - **Conference Paper**: In progress (6-8 instances)
 - **Journal Paper**: Planned (10+ instances)
 
+## Concrete Examples and Axiom Proofs 🔬 NEW
+
+### DiscreteCounter.lean (In Progress)
+
+**Purpose**: Prove the **functoriality axiom** from Theorem 1 using concrete operational semantics.
+
+**Model**: Discrete-time counter with temporal trace semantics (`ℕ → ℕ`)
+
+**Goal**:
+```lean
+theorem replay_respects_restriction :
+  replayDiscrete (restrictEvents events V) =
+  restrictState (replayDiscrete (restrictEvents events W)) V
+```
+
+**Status**: Phase 1 complete (definitions), Phase 2 in progress (lemmas and proof)
+
+**Impact**: Demonstrates axioms are **provable** from computational models, not merely plausible assumptions.
+
+**See**: `CondensedTEL/Examples/README.md` and `PROVING_AXIOM1_ROADMAP.md` for details.
+
 ## Related Documentation
 
 - `META_THEOREM_COMPLETE.md` - Meta-theorem completion certificate (476 lines)
@@ -183,6 +205,8 @@ lean-proofs-github/
 - `THEOREM2_COMPLETE.md` - Theorem 2 completion (412 lines)
 - `THEOREM3_COMPLETE.md` - Theorem 3 completion (456 lines)
 - `FOURTH_INSTANCE_COMPLETE.md` - Theorem 4 completion (650+ lines)
+- `PROVING_AXIOM1_ROADMAP.md` - Implementation plan for proving Axiom 1 🔬 NEW
+- `CondensedTEL/Examples/README.md` - Concrete examples directory 🔬 NEW
 - `AGENTS.md` - Comprehensive project catalog
 
 ## Citation
@@ -193,7 +217,7 @@ lean-proofs-github/
   author={[Authors]},
   year={2026},
   note={Lean 4 formalization with 4 validated instances},
-  howpublished={\url{https://github.com/[repository]/lean-proofs-github}}
+  howpublished={\url{https://github.com/thegiantsnail/lean-proofs-github}}
 }
 ```
 

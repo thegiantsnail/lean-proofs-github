@@ -24,51 +24,47 @@
 3. **lean-toolchain** (25 bytes)
    - Specifies Lean version: v4.3.0
 
-4. **UltrametricCore.lean** (new)
-   - Shared `UltrametricStructure` core
-   - `PropEquiv` and structure-preserving map definitions
-
-5. **UniversalEquivalencePattern.lean** (17,576 bytes, 387 lines)
+4. **UniversalEquivalencePattern.lean** (17,576 bytes, 387 lines)
    - Meta-theorem formalization
    - Three bridge axioms (functoriality, completeness, computational content)
    - Parametric over ultrametric domains
    - 0 sorry statements
 
-6. **Theorem1_FrameDeterministic.lean** (22,078 bytes, 436 lines)
+5. **Theorem1_FrameDeterministic.lean** (22,078 bytes, 436 lines)
    - Instance 1: TEL (Temporal Event Logic)
-   - Sheaf/Frame Determinism equivalence (PropEquiv map)
+   - Sheaf ↔ Frame Determinism equivalence
    - 3 sorry in examples (non-critical)
 
-7. **Theorem2_ThinTreeDeterminism.lean** (17,343 bytes, 386 lines)
+6. **Theorem2_ThinTreeDeterminism.lean** (17,343 bytes, 386 lines)
    - Instance 2: Quantum Control
-   - Thin-Tree/Locality equivalence (PropEquiv map)
+   - Thin-Tree ↔ Locality equivalence
    - 0 sorry statements
 
-8. **Theorem3_LanglandsTheorem.lean** (11,911 bytes, 280 lines)
+7. **Theorem3_LanglandsTheorem.lean** (11,911 bytes, 280 lines)
    - Instance 3: Langlands-style certificates
-   - Gauge/Floer equivalence (PropEquiv map)
+   - Gauge ↔ Floer equivalence
    - 0 sorry statements
 
-9. **Theorem4_ProgramSemantics.lean** (8,388 bytes, 202 lines)
+8. **Theorem4_ProgramSemantics.lean** (8,388 bytes, 202 lines)
    - Instance 4: Program equivalence
-   - Homology/p-adic equivalence (PropEquiv map)
+   - Homology ↔ p-adic equivalence
    - 0 sorry statements
 
-10. **.gitignore** (140 bytes)
+9. **.gitignore** (140 bytes)
    - Excludes build artifacts (.lake/, *.olean)
    - Excludes editor files (.vscode/, *.swp)
    - Excludes OS files (.DS_Store, Thumbs.db)
 
 ### Documentation Files
 
-11. **GITHUB_UPLOAD_INSTRUCTIONS.md** (3,315 bytes)
+10. **GITHUB_UPLOAD_INSTRUCTIONS.md** (3,315 bytes)
     - Step-by-step upload guide
     - Git commands for initialization
     - GitHub repository creation instructions
     - CI/CD workflow template
     - Pre-upload checklist
 
-12. **verify.ps1** (PowerShell verification script)
+11. **verify.ps1** (PowerShell verification script)
     - Checks all required files present
     - Counts lines in theorem files
     - Scans for sorry statements
