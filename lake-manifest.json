@@ -55,5 +55,5 @@
    "inputRev": "v4.3.0",
    "inherited": false,
    "configFile": "lakefile.lean"}],
- "name": "universal_equivalence",
+ "name": "condensed_tel",
  "lakeDir": ".lake"}

@@ -1,0 +1,625 @@
+=== Building All Hodge Phases in WSL2 ===
+
+[1/5] Building UniversalEquivalencePattern...
+warning: mathlib: repository './.lake/packages/mathlib' has local changes
+warning: std: repository './.lake/packages/std' has local changes
+warning: Qq: repository './.lake/packages/Qq' has local changes
+warning: aesop: repository './.lake/packages/aesop' has local changes
+warning: proofwidgets: repository './.lake/packages/proofwidgets' has local changes
+warning: Cli: repository './.lake/packages/Cli' has local changes
+[958/959] Building CondensedTEL.UniversalEquivalencePattern
+stdout:
+./././CondensedTEL/UniversalEquivalencePattern.lean:96:59: warning: unused variable `x` [linter.unusedVariables]
+./././CondensedTEL/UniversalEquivalencePattern.lean:159:40: warning: unused variable `x` [linter.unusedVariables]
+./././CondensedTEL/UniversalEquivalencePattern.lean:194:5: warning: unused variable `a` [linter.unusedVariables]
+./././CondensedTEL/UniversalEquivalencePattern.lean:196:5: warning: unused variable `x` [linter.unusedVariables]
+./././CondensedTEL/UniversalEquivalencePattern.lean:196:13: warning: unused variable `r` [linter.unusedVariables]
+./././CondensedTEL/UniversalEquivalencePattern.lean:229:8: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:252:8: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:266:8: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:289:14: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:290:14: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:291:14: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:292:14: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:302:14: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:303:14: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:304:14: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:305:14: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:315:14: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:316:14: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:317:14: warning: declaration uses 'sorry'
+./././CondensedTEL/UniversalEquivalencePattern.lean:318:14: warning: declaration uses 'sorry'
+✅ Meta-theorem Complete
+
+[2/5] Building ChainComplex...
+warning: mathlib: repository './.lake/packages/mathlib' has local changes
+warning: std: repository './.lake/packages/std' has local changes
+warning: Qq: repository './.lake/packages/Qq' has local changes
+warning: aesop: repository './.lake/packages/aesop' has local changes
+warning: proofwidgets: repository './.lake/packages/proofwidgets' has local changes
+warning: Cli: repository './.lake/packages/Cli' has local changes
+✅ Phase 1 Complete
+
+[3/5] Building CFGChainComplex...
+warning: mathlib: repository './.lake/packages/mathlib' has local changes
+warning: std: repository './.lake/packages/std' has local changes
+warning: Qq: repository './.lake/packages/Qq' has local changes
+warning: aesop: repository './.lake/packages/aesop' has local changes
+warning: proofwidgets: repository './.lake/packages/proofwidgets' has local changes
+warning: Cli: repository './.lake/packages/Cli' has local changes
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Data-Option-Init-Lemmas-1.so ./.lake/packages/std/.lake/build/ir/Std/Data/Option/Init/Lemmas.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Data/Option/Init/Lemmas.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-OpenPrivate-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/OpenPrivate.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/OpenPrivate.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-Unreachable-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/Unreachable.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/Unreachable.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-HaveI-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/HaveI.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/HaveI.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Util-ExtendedBinder-1.so ./.lake/packages/std/.lake/build/ir/Std/Util/ExtendedBinder.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Util/ExtendedBinder.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-TagAttribute-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/TagAttribute.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/TagAttribute.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Command-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Command.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Command.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-SeqFocus-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/SeqFocus.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/SeqFocus.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Parser-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Parser.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Parser.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Name-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Name.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Name.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Util-TermUnsafe-1.so ./.lake/packages/std/.lake/build/ir/Std/Util/TermUnsafe.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Util/TermUnsafe.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Float-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Float.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Float.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-ByCases-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/ByCases.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/ByCases.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Position-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Position.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Position.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-InfoTree-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/InfoTree.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/InfoTree.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-LocalContext-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/LocalContext.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/LocalContext.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Tactic-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Tactic.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Tactic.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Data-Fin-Init-Lemmas-1.so ./.lake/packages/std/.lake/build/ir/Std/Data/Fin/Init/Lemmas.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Data/Fin/Init/Lemmas.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-NameMapAttribute-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/NameMapAttribute.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/NameMapAttribute.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Mathport-Rename-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Mathport/Rename.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Mathport/Rename.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Init-Data-Nat-Notation-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Init/Data/Nat/Notation.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Init/Data/Nat/Notation.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Util-MemoFix-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Util/MemoFix.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Util/MemoFix.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Lean-EnvExtension-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Lean/EnvExtension.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Lean/EnvExtension.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Classes-Dvd-1.so ./.lake/packages/std/.lake/build/ir/Std/Classes/Dvd.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Classes/Dvd.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Data-Array-Init-Basic-1.so ./.lake/packages/std/.lake/build/ir/Std/Data/Array/Init/Basic.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Data/Array/Init/Basic.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Delaborator-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Delaborator.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Delaborator.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Expr-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Expr.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Expr.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Data-Ord-1.so ./.lake/packages/std/.lake/build/ir/Std/Data/Ord.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Data/Ord.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Data-Array-Defs-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Data/Array/Defs.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Data/Array/Defs.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-WF-1.so ./.lake/packages/std/.lake/build/ir/Std/WF.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/WF.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-PersistentHashMap-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/PersistentHashMap.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/PersistentHashMap.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Util-LibraryNote-1.so ./.lake/packages/std/.lake/build/ir/Std/Util/LibraryNote.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Util/LibraryNote.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Meta-Expr-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Meta/Expr.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Meta/Expr.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-CoreM-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/CoreM.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/CoreM.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Elab-Tactic-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Elab/Tactic.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Elab/Tactic.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-MonadBacktrack-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/MonadBacktrack.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/MonadBacktrack.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Control-ForInStep-Basic-1.so ./.lake/packages/std/.lake/build/ir/Std/Control/ForInStep/Basic.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Control/ForInStep/Basic.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Data-DList-1.so ./.lake/packages/std/.lake/build/ir/Std/Data/DList.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Data/DList.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-HashMap-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/HashMap.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/HashMap.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Classes-BEq-1.so ./.lake/packages/std/.lake/build/ir/Std/Classes/BEq.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Classes/BEq.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Util-ProofWanted-1.so ./.lake/packages/std/.lake/build/ir/Std/Util/ProofWanted.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Util/ProofWanted.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-RCases-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/RCases.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/RCases.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-HashSet-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/HashSet.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/HashSet.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-PersistentHashSet-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/PersistentHashSet.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/PersistentHashSet.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-Exact-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/Exact.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/Exact.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-Case-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/Case.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/Case.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Data-Prod-Lex-1.so ./.lake/packages/std/.lake/build/ir/Std/Data/Prod/Lex.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Data/Prod/Lex.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Meta-Inaccessible-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Meta/Inaccessible.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Meta/Inaccessible.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Data-MLList-Basic-1.so ./.lake/packages/std/.lake/build/ir/Std/Data/MLList/Basic.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Data/MLList/Basic.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-Change-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/Change.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/Change.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-Replace-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/Replace.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/Replace.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-Instances-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/Instances.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/Instances.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-LabelAttr-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/LabelAttr.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/LabelAttr.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-LeftRight-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/LeftRight.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/LeftRight.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/Qq/.lake/build/lib/libQq-ForLean-ToExpr-1.so ./.lake/packages/Qq/.lake/build/ir/Qq/ForLean/ToExpr.c.o -L./.lake/packages/Qq/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/Qq/.lake/build/ir/Qq/ForLean/ToExpr.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-SimpRw-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/SimpRw.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/SimpRw.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Lean-Util-Path-1.so ./.lake/packages/std/.lake/build/ir/Std/Lean/Util/Path.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Lean/Util/Path.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/Qq/.lake/build/lib/libQq-ForLean-ReduceEval-1.so ./.lake/packages/Qq/.lake/build/ir/Qq/ForLean/ReduceEval.c.o -L./.lake/packages/Qq/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/Qq/.lake/build/ir/Qq/ForLean/ReduceEval.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Mathport-Attributes-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Mathport/Attributes.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Mathport/Attributes.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-Coe-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Coe.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Coe.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Util-Syntax-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Util/Syntax.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Util/Syntax.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-Spread-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Spread.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Spread.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Lean-Elab-Term-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Lean/Elab/Term.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Lean/Elab/Term.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Util-WithWeakNamespace-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Util/WithWeakNamespace.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Util/WithWeakNamespace.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-Classical-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Classical.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Classical.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/std/.lake/build/lib/libStd-Tactic-Where-1.so ./.lake/packages/std/.lake/build/ir/Std/Tactic/Where.c.o -L./.lake/packages/std/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/std/.lake/build/ir/Std/Tactic/Where.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-Substs-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Substs.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Substs.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/aesop/.lake/build/lib/libAesop-Check-1.so ./.lake/packages/aesop/.lake/build/ir/Aesop/Check.c.o -L./.lake/packages/aesop/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/aesop/.lake/build/ir/Aesop/Check.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/aesop/.lake/build/lib/libAesop-Nanos-1.so ./.lake/packages/aesop/.lake/build/ir/Aesop/Nanos.c.o -L./.lake/packages/aesop/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/aesop/.lake/build/ir/Aesop/Nanos.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/Qq/.lake/build/lib/libQq-Typ-1.so ./.lake/packages/Qq/.lake/build/ir/Qq/Typ.c.o -L./.lake/packages/Qq/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/Qq/.lake/build/ir/Qq/Typ.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/aesop/.lake/build/lib/libAesop-Frontend-Basic-1.so ./.lake/packages/aesop/.lake/build/ir/Aesop/Frontend/Basic.c.o -L./.lake/packages/aesop/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/aesop/.lake/build/ir/Aesop/Frontend/Basic.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/aesop/.lake/build/lib/libAesop-Percent-1.so ./.lake/packages/aesop/.lake/build/ir/Aesop/Percent.c.o -L./.lake/packages/aesop/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/aesop/.lake/build/ir/Aesop/Percent.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/aesop/.lake/build/lib/libAesop-Frontend-ElabM-1.so ./.lake/packages/aesop/.lake/build/ir/Aesop/Frontend/ElabM.c.o -L./.lake/packages/aesop/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/aesop/.lake/build/ir/Aesop/Frontend/ElabM.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Lean-PrettyPrinter-Delaborator-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Lean/PrettyPrinter/Delaborator.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Lean/PrettyPrinter/Delaborator.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/aesop/.lake/build/lib/libAesop-Options-Public-1.so ./.lake/packages/aesop/.lake/build/ir/Aesop/Options/Public.c.o -L./.lake/packages/aesop/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/aesop/.lake/build/ir/Aesop/Options/Public.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Util-AssertExists-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Util/AssertExists.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Util/AssertExists.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-CasesM-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/CasesM.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/CasesM.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-Clear!-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Clear!.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Clear!.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-ClearExcept-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/ClearExcept.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/ClearExcept.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-Clear_-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Clear_.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Clear_.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-Constructor-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Constructor.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Constructor.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/Qq/.lake/build/lib/libQq-SortLocalDecls-1.so ./.lake/packages/Qq/.lake/build/ir/Qq/SortLocalDecls.c.o -L./.lake/packages/Qq/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/Qq/.lake/build/ir/Qq/SortLocalDecls.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-FailIfNoProgress-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/FailIfNoProgress.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/FailIfNoProgress.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-GuardGoalNums-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/GuardGoalNums.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/GuardGoalNums.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Lean-Meta-Basic-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Lean/Meta/Basic.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Lean/Meta/Basic.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-InferParam-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/InferParam.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/InferParam.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-Rename-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Rename.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Rename.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-NthRewrite-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/NthRewrite.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/NthRewrite.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-GuardHypNums-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/GuardHypNums.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/GuardHypNums.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Lean-SMap-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Lean/SMap.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Lean/SMap.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/Qq/.lake/build/lib/libQq-ForLean-Do-1.so ./.lake/packages/Qq/.lake/build/ir/Qq/ForLean/Do.c.o -L./.lake/packages/Qq/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/Qq/.lake/build/ir/Qq/ForLean/Do.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-UnsetOption-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/UnsetOption.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/UnsetOption.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-TypeCheck-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/TypeCheck.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/TypeCheck.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-Set-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Set.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/Set.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Tactic-SudoSetOption-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/SudoSetOption.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Tactic/SudoSetOption.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+error: > /home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc -shared -o ./.lake/packages/mathlib/.lake/build/lib/libMathlib-Util-AtomM-1.so ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Util/AtomM.c.o -L./.lake/packages/mathlib/.lake/build/lib
+error: stderr:
+ld.lld: error: ./.lake/packages/mathlib/.lake/build/ir/Mathlib/Util/AtomM.c.o: unknown file type
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+error: external command `/home/athena/.elan/toolchains/leanprover--lean4---v4.3.0/bin/leanc` exited with code 1
+[162/2495] Linking Std.Tactic.Unreachable
+[172/2495] Linking Std.Tactic.OpenPrivate
+[188/2495] Linking Std.Tactic.HaveI
+[188/2495] Linking Std.Lean.TagAttribute
+[188/2495] Linking Std.Util.ExtendedBinder
+[190/2495] Linking Std.Lean.Command
+[193/2495] Linking Std.Data.Option.Init.Lemmas
+[197/2495] Linking Std.Tactic.SeqFocus
+[197/2495] Linking Std.Lean.Parser
+[197/2495] Linking Std.Lean.Name
+[197/2495] Linking Std.Tactic.ByCases
+[197/2495] Linking Std.Lean.Float
+[197/2495] Linking Std.Util.TermUnsafe
+[197/2495] Linking Std.Lean.Position
+[197/2495] Linking Std.Lean.InfoTree
+[197/2495] Linking Std.Lean.LocalContext
+[197/2495] Linking Std.Lean.Tactic
+[197/2495] Linking Std.Lean.NameMapAttribute
+[197/2495] Linking Std.Data.Fin.Init.Lemmas
+[197/2495] Linking Mathlib.Init.Data.Nat.Notation
+[197/2495] Linking Mathlib.Mathport.Rename
+[197/2495] Linking Mathlib.Lean.EnvExtension
+[197/2495] Linking Mathlib.Util.MemoFix
+[197/2495] Linking Std.Lean.Delaborator
+[197/2495] Linking Std.Data.Array.Init.Basic
+[197/2495] Linking Std.Classes.Dvd
+[197/2495] Linking Std.Lean.Expr
+[197/2495] Linking Std.Data.Ord
+[197/2495] Linking Mathlib.Data.Array.Defs
+[197/2495] Linking Std.WF
+[197/2495] Linking Std.Lean.PersistentHashMap
+[197/2495] Linking Std.Lean.Meta.Expr
+[197/2495] Linking Std.Util.LibraryNote
+[197/2495] Linking Std.Lean.Elab.Tactic
+[197/2495] Linking Std.Lean.CoreM
+[197/2495] Linking Std.Control.ForInStep.Basic
+[197/2495] Linking Std.Lean.MonadBacktrack
+[197/2495] Linking Std.Data.DList
+[197/2495] Linking Std.Lean.HashMap
+[197/2495] Linking Std.Classes.BEq
+[197/2495] Linking Std.Util.ProofWanted
+[197/2495] Linking Std.Tactic.RCases
+[197/2495] Linking Std.Lean.HashSet
+[197/2495] Linking Std.Lean.PersistentHashSet
+[197/2495] Linking Std.Tactic.Exact
+[197/2495] Linking Std.Tactic.Case
+[197/2495] Linking Std.Data.Prod.Lex
+[197/2495] Linking Std.Lean.Meta.Inaccessible
+[197/2495] Linking Std.Data.MLList.Basic
+[197/2495] Linking Std.Tactic.Change
+[197/2495] Linking Std.Tactic.Replace
+[197/2495] Linking Std.Tactic.LabelAttr
+[197/2495] Linking Std.Tactic.Instances
+[197/2495] Linking Std.Tactic.LeftRight
+[197/2495] Linking Std.Lean.Util.Path
+[197/2495] Linking Qq.ForLean.ToExpr
+[197/2495] Linking Mathlib.Tactic.SimpRw
+[197/2495] Linking Qq.ForLean.ReduceEval
+[197/2495] Linking Mathlib.Tactic.Coe
+[197/2495] Linking Mathlib.Mathport.Attributes
+[198/2495] Linking Mathlib.Util.Syntax
+[198/2495] Linking Mathlib.Lean.Elab.Term
+[198/2495] Linking Mathlib.Util.WithWeakNamespace
+[198/2495] Linking Mathlib.Tactic.Spread
+[198/2495] Linking Mathlib.Tactic.Classical
+[198/2495] Linking Mathlib.Tactic.Substs
+[198/2495] Linking Std.Tactic.Where
+[198/2495] Linking Qq.Typ
+[198/2495] Linking Aesop.Nanos
+[200/2495] Linking Aesop.Check
+[200/2495] Linking Aesop.Frontend.Basic
+[200/2495] Linking Aesop.Percent
+[200/2495] Linking Aesop.Frontend.ElabM
+[200/2495] Linking Mathlib.Lean.PrettyPrinter.Delaborator
+[200/2495] Linking Aesop.Options.Public
+[200/2495] Linking Mathlib.Util.AssertExists
+[204/2495] Linking Mathlib.Tactic.Clear!
+[204/2495] Linking Mathlib.Tactic.CasesM
+[205/2495] Linking Mathlib.Tactic.ClearExcept
+[205/2495] Linking Qq.SortLocalDecls
+[205/2495] Linking Mathlib.Tactic.Clear_
+[205/2495] Linking Mathlib.Tactic.Constructor
+[205/2495] Linking Mathlib.Tactic.GuardGoalNums
+[205/2495] Linking Mathlib.Tactic.FailIfNoProgress
+[205/2495] Linking Mathlib.Lean.Meta.Basic
+[205/2495] Linking Mathlib.Tactic.InferParam
+[205/2495] Linking Mathlib.Tactic.Rename
+[205/2495] Linking Qq.ForLean.Do
+[205/2495] Linking Mathlib.Tactic.NthRewrite
+[206/2495] Linking Mathlib.Tactic.GuardHypNums
+[206/2495] Linking Mathlib.Lean.SMap
+[206/2495] Linking Mathlib.Tactic.UnsetOption
+[206/2495] Linking Mathlib.Tactic.TypeCheck
+[206/2495] Linking Mathlib.Tactic.SudoSetOption
+[206/2495] Linking Mathlib.Tactic.Set
+[267/2495] Linking Mathlib.Util.AtomM
