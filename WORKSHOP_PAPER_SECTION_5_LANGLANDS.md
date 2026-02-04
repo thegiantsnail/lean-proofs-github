@@ -1,4 +1,4 @@
-# Section 5: Instance 3 – Global–Local Program Equivalence (Langlands Pattern)
+# Section 5: Instance 3 – Langlands Correspondence
 
 **Workshop Paper**: The Universal Equivalence Pattern  
 **Target**: CPP 2027, ITP 2027  
@@ -7,32 +7,15 @@
 
 ---
 
-## 5. Instance 3: Abstract Duality Pattern (Langlands Pattern)
+## 5. Instance 3: Abstract Duality Pattern (Langlands-Inspired)
 
-⚠️ **Formalization Status**: This instance is a **symbolic template only**—it demonstrates the universal pattern structure using Langlands pattern terminology but does not implement actual Floer homology or gauge theory. See §5.8 for honest assessment.
+⚠️ **Formalization Status**: This instance is a **symbolic template only**—it demonstrates the universal pattern structure using Langlands-inspired terminology but does not implement actual Floer homology or gauge theory. See §5.8 for honest assessment.
 
 We present the third instance: the equivalence between symbolic gauge equivalence and symbolic Floer homology. This instance achieved the highest productivity gain—**26× speedup** (~1 hour vs. baseline), while moving to a completely different mathematical domain (arithmetic geometry). The formalization demonstrates that the **pattern template** applies even to abstract correspondence results inspired by number theory.
 
-*This work does not claim or imply results in the classical Langlands program over number fields; “Langlands” is used strictly to denote the global–local duality pattern.*
-
-### 5.0 Scope, Terminology, and Non-Goals
-
-We refer to this instance as **Global–Local Program Equivalence (Langlands Pattern)** to emphasize the structural analogy rather than any arithmetic claim.
-
-**Non-Goals**:
-* ❌ No number theory
-* ❌ No automorphic representations of reductive groups
-* ❌ No modular forms over ℚ or adèles
-* ❌ No claims about classical Galois groups
-
-**Instead, we focus on**:
-* ✅ Category-theoretic duality
-* ✅ Ultrametric descent
-* ✅ Program semantics equivalence
-
 ### 5.1 Domain: Certificate Chains with Profinite Hierarchy
 
-**Setting**: The local Langlands correspondence relates Galois representations (arithmetic/algebraic) to program semantic invariants (automorphic-like, analytic/geometric). We model this via **certificate chains**—sequences of certified statements with authority levels—serving as proxies for the descent data and étale covers in arithmetic geometry.
+**Setting**: The local Langlands correspondence relates Galois representations (arithmetic/algebraic) to automorphic representations (analytic/geometric). We model this via **certificate chains**—sequences of certified statements with authority levels—serving as proxies for the descent data and étale covers in arithmetic geometry.
 
 **Ultrametric structure**: Certificate chains are equipped with a **profinite topology** based on refinement levels. Two chains are "close" if they agree modulo many finite quotient levels. Define distance:
 
@@ -184,14 +167,14 @@ The Langlands instance demonstrated that productivity gains **accumulate**—the
 
 **Mathematical significance**: The local Langlands correspondence [Lan70, HT01] relates:
 - **Galois side**: Representations of $\text{Gal}(\bar{\mathbb{Q}}_p/\mathbb{Q}_p)$ (arithmetic, profinite)
-- **Automorphic side**: Program semantic invariants (automorphic-like, analytic, smooth)
+- **Automorphic side**: Representations of $\text{GL}_n(\mathbb{Q}_p)$ (analytic, smooth)
 
 Our formalization captures this "local-to-global" structure via:
 - **Certificate chains**: Model descent data and étale covers
 - **Floer homology**: Captures cohomological structure (Galois side proxy)
-- **Gauge equivalence**: Captures equivalence of representations (program semantic invariant, automorphic-like side proxy)
+- **Gauge equivalence**: Captures equivalence of representations (automorphic side proxy)
 
-The equivalence theorem provides a **computational interpretation** of Langlands correspondence: profinite-tested homology (abstract, Galois-like) corresponds exactly to gauge equivalence (concrete, program semantic invariant, automorphic-like).
+The equivalence theorem provides a **computational interpretation** of Langlands correspondence: profinite-tested homology (abstract, Galois-like) corresponds exactly to gauge equivalence (concrete, automorphic-like).
 
 **Relation to Scholze's work**: The use of profinite structure echoes Scholze's perfectoid spaces and diamonds [Sch12], where profinite-étale topology enables bridging rigid analytic and algebraic geometry. Our certificate chains are toy models of more sophisticated descent data in arithmetic geometry.
 
@@ -216,7 +199,7 @@ The Langlands-inspired instance demonstrates:
 **What is NOT formalized**:
 - ❌ Actual Floer homology (no chain complexes, no symplectic geometry, no pseudo-holomorphic curves)
 - ❌ Actual gauge theory (no Lie groups, no principal bundles, no connections)
-- ❌ Langlands correspondence (no Galois representations, no program semantic invariants (automorphic-like))
+- ❌ Langlands correspondence (no Galois representations, no automorphic forms)
 
 **Why this matters**:
 - The formalization demonstrates **pattern structure** but not **mathematical content**

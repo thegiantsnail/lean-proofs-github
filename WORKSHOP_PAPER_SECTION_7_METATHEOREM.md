@@ -220,7 +220,7 @@ The meta-theorem explains this acceleration: once the pattern is recognized, ~90
 
 **Theoretical framework**: The pattern resembles:
 - **Categorical equivalence**: Abstract (sheaves) ↔ Concrete (stalks)
-- **Langlands philosophy**: Galois (arithmetic) ↔ Program semantic invariants (automorphic-like)
+- **Langlands philosophy**: Galois (arithmetic) ↔ Automorphic (analytic)
 - **Stone duality**: Topology (spaces) ↔ Algebra (rings)
 
 Conjecture: The universal pattern may be a **formalization of Stone-type dualities** in ultrametric settings, where "local-to-global" (sheaf gluing) corresponds to "computation" (decidability).

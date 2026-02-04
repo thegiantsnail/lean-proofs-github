@@ -25,7 +25,7 @@ This pattern is not merely an organizing principle but a **predictive framework*
 - **Temporal Event Logic (TEL)**: Sheaf structure on frame windows $\Leftrightarrow$ frame-deterministic UI replay (397 lines Lean 4, all proofs complete)
 - **Quantum Control**: Thin-tree reachability structure $\Leftrightarrow$ locality-constrained Pauli operators (386 lines, 13× productivity gain over baseline)
 - **Langlands**: Gauge equivalence of certificate chains $\Leftrightarrow$ Floer homology isomorphism (297 lines, 26× productivity gain)
-- **Program Semantics**: Homological equivalence $\Leftrightarrow$ p-adic equivalence of syntax trees (202 lines, "Global–Local Program Equivalence (Langlands Pattern)")
+- **Program Semantics**: Homological equivalence $\Leftrightarrow$ p-adic equivalence of syntax trees (202 lines, "Local Langlands for Programs")
 
 All code type-checks successfully with Lean 4, totaling 1,694 lines: 412 lines for the meta-theorem formalization and 1,282 lines across four domain instances. The TEL instance (397 lines) is fully proven. Quantum (386 lines), Langlands (297 lines), and Program Semantics (202 lines) instances are axiomatized following the three-axiom pattern (functoriality, completeness, computational content), with proof architecture validated by the type checker.
 
@@ -90,9 +90,9 @@ Each exhibits ultrametric distance (valuation, homotopy level, approximation ord
 
 **Quantum control.** Thin-tree structure appears in [BCS19] for quantum compiler optimization. We formalize the equivalence with locality constraints, demonstrating the pattern's applicability beyond classical mathematics.
 
-**Langlands program.** The local Langlands correspondence [Lan70, HT01] relates Galois representations to program semantic invariants (automorphic-like). Our formalization uses certificate chains and Floer homology as proxies, capturing the "local-to-global" structure via gauge equivalence.
+**Langlands program.** The local Langlands correspondence [Lan70, HT01] relates Galois representations to automorphic forms. Our formalization uses certificate chains and Floer homology as proxies, capturing the "local-to-global" structure via gauge equivalence.
 
-**Program equivalence.** Classical results (operational vs. denotational semantics [Plo77], syntactic vs. semantic equality [Pit97]) establish correspondence but don't emphasize p-adic or ultrametric structure. Our "Global–Local Program Equivalence (Langlands Pattern)" interpretation reveals new connections.
+**Program equivalence.** Classical results (operational vs. denotational semantics [Plo77], syntactic vs. semantic equality [Pit97]) establish correspondence but don't emphasize p-adic or ultrametric structure. Our "Local Langlands for Programs" interpretation reveals new connections.
 
 ### Paper Organization
 

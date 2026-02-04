@@ -243,13 +243,13 @@ theorem program_decidable :
 
 /-! ## Connection to Langlands Program -/
 
-/-- This is Global–Local Program Equivalence (Langlands Pattern):
+/-- This is "Local Langlands for Programs":
     - Programs ↔ Representations (via homology)
     - p-adic valuations ↔ Local factors
     - Global equivalence ↔ Product of local factors
 
   Just as Langlands relates:
-    Galois representations ↔ Program semantic invariants (automorphic-like, via L-functions)
+    Galois representations ↔ Automorphic forms (via L-functions)
 
   We have:
     Program homology ↔ p-adic structure (via valuations)
